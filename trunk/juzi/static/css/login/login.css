@@ -1,0 +1,73 @@
+.mui-content{
+  position:absolute;left:0;top:0;width:100%;height:100%;
+  background-color: white;
+}
+.muzi-input{
+  width: 90%;
+  height: 44px;
+  margin: 20px auto 0px auto;
+  background-color: #F5F5F5;
+  color: #333333;
+  border-radius: 10px;
+}
+.muzi-input img{
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 10px 20px;
+}
+.muzi-input input{
+  width: 80%;
+  height: 100%;
+  float: left;
+  background-color: #F5F5F5;
+  border: none;
+  font-size: 14px;
+  padding: 0px;
+}
+
+.muzi-lockpass{
+  width: 90%;
+  margin: 0px auto;
+  text-align: right;
+  color: #a0a0a0;
+
+}
+.muzi-login{
+  width: 90%;
+  height: 44px;
+  margin: 20px auto 0px auto;
+}
+.muzi-login button{
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#929292), to(#8f8f94));
+  color: #fff;
+  font-size: 16px;
+}
+.muzi-register{
+  color: #00a0c6;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+}
+.muzi-loginother{
+  margin-top: 80px;
+}
+.muzi-loginother  .muzi-info{
+  background: #fff;
+  font-size: 15px;
+  text-align: center;
+  color: #a0a0a0;
+}
+.muzi-loginother .muzi-img{
+  width: 70%;
+  margin: 20px auto 0px auto;
+  height: 60px;
+}
+.muzi-loginother .muzi-img div{
+  width: 33%;
+  text-align: center;
+  float: left;
+}

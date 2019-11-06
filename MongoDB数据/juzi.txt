@@ -1,0 +1,95 @@
+db.muzi_juzi.insert([
+	{user_id:1,text:"术以知奸，以刑止刑。",
+	author:"韩非",source:"韩非子",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"唯夫蝉之清素兮，潜厥类乎太阴。在盛阳之仲夏兮，始游豫乎芳林。实澹泊而寡欲兮，独怡乐而长吟。声皦皦而弥厉兮，似贞士之介心。",
+	author:"曹植",source:"蝉赋",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"捐余袂兮江中，遗余褋兮澧浦。搴汀洲兮杜若，将以遗兮远者；时不可兮骤得，聊逍遥兮容与！",
+	author:"屈原",source:"九歌·湘夫人",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"凤兮凤兮归故乡，遨游四海求其凰。 ",
+	author:"司马相如",source:"凤求凰",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"黄金白璧买歌笑，一醉累月轻王侯。",
+	author:"李白",source:"忆旧游寄谯郡元参军",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"安能摧眉折腰事权贵，使我不得开心颜。",
+	author:"李白",source:"梦游天姥吟留别",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"念念不忘，亦慰我心，你我隔世，不可寄托鸿鹄，片言往来，他日白首，不知记忆几何，信简安在，日月渺兮，湘子降兮，相思之苦，若是可忍，孰不可忍，与卿邂逅，若非天意，何为天意，死生契阔，纵空许约，亦不敢忘，犹记往昔，其中种种，如梦如露，举大义而舍身，虽百挫而犹坚，然生不见卿，寤寐难求，此生已矣，世事纷乱，郁郁累累，来如春梦，逝如朝霞，与卿相知，何其有幸，只待执子偕老，岂知，道阻且长，与卿相隔，千岁万里，远于遥月，重于冥洋，既见卿卿，云胡不喜，不见卿卿，死生何异，若有来日，卿卿见字，情愿卿卿，懵懂不知，从今往后，勿复相思，努力加餐，百岁无忧，卿卿恕我，含恨无用，我负卿卿，虚度一生，无缘相守，何劳相望，东风作恶，使同心而离居，吾亦何忍，令忧伤以终老.",
+	author:"公明",source:"相爱穿梭千年",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"桃之夭夭，灼灼其华。君子如玉，触手也温。",
+	author:"佚名",source:"诗经",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"林中抚琴曲委婉 群山听懂我悲欢",
+	author:"许嵩",source:"山水之间",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"没有期待就没有失望，没有羁绊就不会受伤。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"我讨厌温柔的女孩子。温柔的女孩子其实对所有人都温柔，我却会误以为只对我温柔，然后就沾沾自喜得意忘形，最后闹得不欢而散，双方都受到伤害。——所以我才讨厌温柔的女孩子。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"孤独的人不会伤害别人，只会不断地伤害自己罢了。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"大家互相帮助，一起成功，一起幸福什么的，不过是种理想。 现实中，有人幸福，就必定有人被抛弃有人光鲜，就必须有人满身泥泞。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"为什么要称赞他人？那是为了把对方捧到更高的地方更容易绊他的脚，为了把他从高处摔下来。这就叫做称赞杀人法。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"可以轻易地从别人那里得到的东西，一定是伪物。能从别人那里轻易获得之物，也一定会被别人轻易夺去。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"让某个人承受痛苦，再把那个人除掉，这就是我为人。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"人类要是遇到真心害怕的事，完全不会在意别人，就算牺牲周围的人也要获救。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"为了将高中三年级夏季运动会上的败北变得美好而流泪，为了搪塞高考失败成为浪人的自己而坚持说失败乃成功之母，为了欺骗没有胆量像喜欢的人告白的自己而逞强说是为了对方的幸福着想才主动退出等等——果然青春什么的，全都是骗人的。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"青春是谎言，是邪恶。讴歌青春的人们不断地欺骗自己与周围。永远以肯定的态度面对自己周围的环境。即使有些致命的失败，也会被称为青春的象征，成为值得回忆的过去。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"善于破坏气氛的人，不仅能破坏好的气氛，其实也能把坏的气氛破坏掉。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	
+	{user_id:1,text:"她们像夜空中的月亮，不论你走到哪里，她们就跟到哪里，但你无法触碰她们，也无法掌握距离感。光是打个招呼，就开始胡思乱想；彼此传封邮件，便感到心神不宁；接到对方来电的那一整天，都会对着来电记录傻笑。不过我很清楚，那只是一种温柔。对我温柔的人也会对其他人温柔，我几乎要忘记这个道理。我并不迟钝，其实满敏感的，甚至到了过敏的地步。因为这个缘故，我才会出现过敏反应。我早已有过一次教训，训练有素的独行侠是不会重复被骗的。不管是别人猜拳猜输，玩处罚游戏来跟我告白；还是由女生代笔，让男生交给我的假情书，对我来说通通没用！我可是身经百战的强者！如果要比输，我肯定是最厉害的！ 一次又一次期待，一次又一次落空……不知道从什么时候开始，我已经不再抱持。",
+	author:"大老师",source:"青春恋爱物语",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"时分，你又逗笑了所有人，唯独弄哭了我。正如你所擅长的，好像漫不经心的。",
+	author:"时秒",source:"快把我哥带走",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"当伤口被捅开的当下，人往往感觉不到疼。真正的疼痛是在日常生活里，缺口随着生活的展开，而越撕越大。离开的人，像是一段幻肢，哪怕再也不会回到你身边了，却时刻隐隐作痛着，连回家的路都变得硌脚，我才愿意承认，原来，我最怕失去的人是你。",
+	author:"时秒",source:"快把我哥带走",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"我是一个很平凡的打游戏都会输的人。如果只有我一个，许多事情我会不敢面对。可是因为你，我可以无所不能。我知道你也是。",
+	author:"时分",source:"快把我哥带走",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"你有没有想过，有一天你突然要离开你的生活，你被赶出了你以为永远不会倒塌的生活。那生活虽然不精致，但却是你一砖一瓦建的一切。你能给一个小女孩留下什么呢？给她被爱过的记忆，让她分清冷暖。给她适时的离别，让她拒绝依赖，让她成为一颗小树，而不是一根藤蔓。",
+	author:"时分",source:"快把我哥带走",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"如果说人最后一定是一无所有，那现在就是最后了吧。",
+	author:"时秒",source:"快把我哥带走",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"如果真有离开的那一天，真有那一天的话，那天一定是愚人节。",
+	author:"时分",source:"快把我哥带走",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"平生不修善果，只爱杀人放火。忽地顿开金绳，这里扯断玉锁。咦！钱塘江上潮信来，今日方知我是我",
+	author:"鲁智深",source:"水浒传",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"汉丞相、武乡侯诸葛亮，致书于大司马曹子丹之前：窃谓夫为将者，能去能就，能柔能刚；能进能退，能弱能强。不动如山岳，难测如阴阳；无穷如天地，充实如太仓；浩渺如四海，眩曜如三光。预知天文之旱涝，先识地理之平康；察阵势之期会，揣敌人之短长。嗟尔无学后辈，上逆穹苍；助篡国之反贼，称帝号于洛阳；走残兵于斜谷，遭霖雨于陈仓；水陆困乏，人马猖狂；抛盈郊之戈甲，弃满地之刀枪；都督心崩而胆裂，将军鼠窜而狼忙！无面见关中之父老，何颜入相府之厅堂！史官秉笔而记录，百姓众口而传扬：仲达闻阵而惕惕，子丹望风而遑遑！吾军兵强而马壮，大将虎奋以龙骧；扫秦川为平壤，荡魏国作丘荒！",
+	author:"诸葛亮",source:"诸葛亮",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"少年寒窗苦读，壮年列国漂泊，家远人单，困辱尽尝，而终至拜将入相，然则美梦成真，终有尽时，名士暮年，一样孤零，年年辛苦，不觉如梦，王侯将相，风吹雨打。",
+	author:"张仪",source:"大秦帝国之纵横",original:1,status:1,create_user:1,create_time:new Date()},
+	
+	{user_id:1,text:"隐约雷鸣 阴霾天空 但盼风雨来 能留你在此 隐约雷鸣 阴霾天空 即使天无雨 我亦留此地",
+	author:"新海诚",source:"言叶之庭",original:1,status:1,create_user:1,create_time:new Date()},
+])

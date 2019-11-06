@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../../../../static/backstage/framework/css/add/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../../../static/backstage/framework/css/add/font-awesome.css?v=4.4.0"   rel="stylesheet">
+    <link href="../../../../static/backstage/framework/css/add/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="../../../../static/backstage/framework/css/add/plugins/jsTree/style.min.css" rel="stylesheet">
+    <link href="../../../../static/backstage/framework/css/add/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">
+    <link href="../../../../static/backstage/framework/css/add/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+    <link href="../../../../static/backstage/framework/css/add/animate.css" rel="stylesheet">
+    <link href="../../../../static/backstage/framework/css/add/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="../../../../static/backstage/framework/css/add/style.css" rel="stylesheet">
+    <link href="../../../../static/backstage/framework/plugins/daterangepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../static/backstage/framework/plugins/font-awesome/css/font-awesome.min.css">
+    <!--&lt;!&ndash; Ionicons &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="../../../../static/backstage/framework/dist/ionicons.min.css">-->
+    <!--&lt;!&ndash; Theme style &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="../../../../static/backstage/framework/dist/css/adminlte.min.css">-->
+    <!-- iCheck -->
+    <!--<link rel="stylesheet" href="../../../../static/backstage/framework/plugins/iCheck/flat/blue.css">-->
+    <!--&lt;!&ndash; Morris chart &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="../../../../static/backstage/framework/plugins/morris/morris.css">-->
+    <!--&lt;!&ndash; jvectormap &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="../../../../static/backstage/framework/plugins/jvectormap/jquery-jvectormap-1.2.2.css">-->
+    <!--&lt;!&ndash; Date Picker &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="../../../../static/backstage/framework/plugins/datepicker/datepicker3.css">-->
+    <!--&lt;!&ndash; Daterange picker &ndash;&gt;-->
+
+
+
+    <!--<link rel="stylesheet" href="../../../../static/backstage/framework/plugins/daterangepicker/daterangepicker-bs3.css">-->
+    <!--&lt;!&ndash; bootstrap wysihtml5 - text editor &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="../../../../static/backstage/framework/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">-->
+    <!--&lt;!&ndash; Google Font: Source Sans Pro &ndash;&gt;-->
+    <!--<link href="../../../../static/backstage/framework/dist/css.css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">-->
+
+    <!--<link href="../../../../static/backstage/framework/css/animate.css"-->
+          <!--rel="stylesheet">-->
+
+    <!--<link href="../../../../static/backstage/framework/css/style.css"-->
+          <!--rel="stylesheet">-->
+    <!--<link href="../../../../static/backstage/framework/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">-->
+    <!--<link href="../../../../static/backstage/framework/plugins/jsTree/style.min.css" rel="stylesheet">-->
+    <!--<link href="../../../../static/backstage/framework/plugins/jqTreeGrid/jquery.treegrid.css"  rel="stylesheet">-->
+
+
+</head>
+<body>
+
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="adminFrom">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">账号：</label>
+                            <div class="col-sm-4">
+                                <input id="userName" name="userName" class="form-control" type="text" onkeyup="value=value.replace(/[^a-zA-Z\d]/g,'')">
+                            </div>
+                            <label class="col-sm-2 control-label">管理者姓名：</label>
+                            <div class="col-sm-4">
+                                <input id="loginName" name="loginName" class="form-control" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系电话：</label>
+                            <div class="col-sm-4">
+                                <input id="tel" name="tel" class="form-control" type="text" onkeyup="value=value.replace(/[^a-zA-Z\d]/g,'')">
+                            </div>
+
+                            <label class="col-sm-2 control-label">性别：</label>
+                            <div class="col-sm-4">
+                                <select class="form-control" name="sex" id="sex">
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">状态：</label>
+                            <div class="col-sm-4">
+                                <select class="form-control" name="status" id="status">
+                                    <option value="1">正常</option>
+                                    <option value="0">禁用</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert"
+                                aria-hidden="true">×</button>
+                        <h5>
+                            <i class="icon fa fa-info"></i> 提示!
+                        </h5>
+                        <p>【创建的初始密码为123456】</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../../../static/backstage/framework/js/sys.js"></script>
+<script src="../../../../static/backstage/framework/js/add/jquery.min.js?v=2.1.4"></script>
+<script src="../../../../static/backstage/framework/js/add/bootstrap.min.js?v=3.3.6"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/validate/jquery.validate.min.js"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/validate/messages_zh.min.js"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/jsTree/jstree.min.js"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/jqTreeGrid/jquery.treegrid.min.js"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/jqTreeGrid/jquery.treegrid.extension.js"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/jqTreeGrid/jquery.treegrid.bootstrap3.js"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/chosen/chosen.jquery.js"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/layer/layer.js"></script>
+<script src="../../../../static/backstage/framework/js/add/content.js?v=1.0.0"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/summernote/summernote.js"></script>
+<script src="../../../../static/backstage/framework/js/add/plugins/summernote/summernote-zh-CN.min.js"></script>
+<script src="../../../../static/backstage/manager/admin/add.js"></script>
+</body>
+</html>

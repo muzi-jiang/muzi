@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.muzi.manager.mapper.MenuManagerMapper" >
+
+	<select id="list" resultType="com.muzi.system.entity.Permission">
+		select * from t_permission where 1=1
+
+		<where>
+			<if test="resourcesName != null and resourcesName != ''">
+				and permission_name like concat(concat('%',#{permissionName}),'%')
+			</if>
+		</where>
+
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="findParentMenu" resultType="com.muzi.system.entity.Permission">
+		select * from t_permission where permission_parentid = 0
+	</select>
+	
+	
+	<select id="findOne" parameterType="int" resultType="com.muzi.system.entity.Permission">
+		select * from t_permission where id = #{id}
+	</select>
+	
+	<select id="findMenuisExisByName" parameterType="String" resultType="int">
+		select count(1) from t_permission where permission_name = #{menuName}
+	</select>	
+	
+	<insert id="save" parameterType="com.muzi.system.entity.Permission">
+		insert into t_permission(permission_name,permission_url,permission_icon,
+				permission_parentid,create_user_id,create_user_name,create_time)
+		values (#{permissionName},#{permissionUrl},#{permissionIcon},
+				#{permissionParentid},#{createUserId},#{createUserName},now()
+		)		
+				
+	</insert>
+	
+	<update id="update" parameterType="com.muzi.system.entity.Permission">
+		update t_permission set 
+				permission_name = #{permissionName},
+				permission_url = #{permissionUrl},
+				permission_icon = #{permissionIcon},
+				permission_parentid = #{permissionParentid},
+				status = #{status},
+				update_user_id = #{updateUserId},
+				update_user_name = #{updatedUserName},
+				update_time = now()
+				where id = #{id}
+	</update>
+	<select id="findMenuByName" parameterType="String" resultType="com.muzi.system.entity.Permission">
+			select * from t_permission where permission_name = #{name}
+	</select>
+	
+	<delete id="remove" parameterType="int">
+		delete from t_permission where id = #{id} or permission_parentid = #{id}
+	</delete>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

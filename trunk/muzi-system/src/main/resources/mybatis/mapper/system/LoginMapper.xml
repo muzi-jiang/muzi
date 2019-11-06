@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.muzi.system.mapper.LoginMapper" >
+		
+   	<select id="findUserByUserName" parameterType="String" resultType="com.muzi.system.entity.User">
+   			select * from vw_user where username = #{username}
+   	</select>
+	
+	<select id="findParentPermissionByUserId" parameterType="int" resultType="com.muzi.system.entity.Permission">
+			SELECT
+				distinct(p.permission_name) as flag,p.* 
+			FROM
+				t_user_role tur
+				INNER JOIN t_role_permission trp ON tur.role_id = trp.role_id
+				INNER JOIN t_permission p ON trp.permission_id = p.id 
+			WHERE
+				tur.user_id = #{id}	  and 	p.permission_parentid = '0'  and   p.status != '0'
+							
+	</select>
+	
+	<select id="findPermissionByParentId" parameterType="String" resultType="com.muzi.system.entity.Permission">
+			
+		SELECT
+				distinct(p.permission_name) as flag,p.* 
+		FROM
+			t_user_role tur
+			INNER JOIN t_role_permission trp ON tur.role_id = trp.role_id
+			INNER JOIN t_permission p ON trp.permission_id = p.id 
+		WHERE
+			tur.user_id = #{id}	  and 	p.permission_parentid != '0'   and   p.status != '0'
+	</select>
+	
+	
+	
+	
+	
+</mapper>

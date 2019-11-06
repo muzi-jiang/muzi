@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.muzi.manager.mapper.RoleManagerMapper" >
+
+	
+	<select id="list"  resultType="com.muzi.system.entity.Role">
+		select * from t_role  where 1 =1
+			<if test="rolename != null and rolename != ''">
+				and	rolename LIKE concat(concat('%',#{rolename}),'%')
+		 	</if>
+			<if test="status != null and status != ''">
+				and	 status = #{status}
+		 	</if>
+		
+		
+       <!--  <where>
+            1 = 1
+            <if test="search != null and search != ''">
+                and (
+                rolename LIKE concat(concat('%',#{search}),'%')
+                or 
+                status = #{search}
+                )
+            </if>
+        </where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+            <otherwise>
+                order by id asc
+            </otherwise>
+        </choose> -->
+        <if test="offset != null and limit != null">
+            limit #{offset}, #{limit}
+        </if>
+	</select>
+
+
+	<select id="count" resultType="int">
+        select count(*) from t_role
+        <where>
+            1 = 1
+            <if test="search != null and search != ''">
+                and (
+                rolename LIKE concat(concat('%',#{search}),'%')
+                or 
+                status = #{search}
+            </if>
+        </where>
+    </select>
+
+	<select id="findRoleByRoleName" parameterType="String" resultType="com.muzi.system.entity.Role">
+		select * from t_role where rolename = #{rolename}
+	</select>
+
+
+	<insert id="save" parameterType="com.muzi.system.entity.Role" useGeneratedKeys="true" keyProperty="id">
+		insert into 
+			t_role(rolename,remarks,create_user_id,create_user_name,create_time)
+		values
+			(#{rolename},#{remarks},#{createUserId},#{createUserName},now())	
+	</insert>
+
+
+	<insert id="saveRoleAndPermission">
+		insert into t_role_permission(role_id,permission_id) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{id},#{item})
+        </foreach>
+	</insert>
+
+	<select id="findRoleById" parameterType="int" resultType="com.muzi.system.entity.Role">
+		select * from t_role where id = #{id}
+	</select>
+
+
+	<select id="listMenuIdByRoleId" resultType="Integer">
+		select permission_id from t_role_permission
+		<where>role_id = #{roleId}</where>
+	</select>
+	
+	<update id="update" parameterType="com.muzi.system.entity.Role">
+			update t_role set 
+				rolename = #{rolename},
+				remarks = #{remarks},
+				status = #{status},
+				update_user_id = #{updateUserId},
+				update_user_name = #{updatedUserName},
+				update_time = now()
+			where id = #{id}
+	</update>
+	
+	<delete id="removeByRoleId" parameterType="int">
+		DELETE FROM t_role_permission WHERE role_id=#{id}
+	</delete>
+	
+	<delete id="removeRoleById" parameterType="int">
+		delete from t_role where id = #{id}
+	</delete>
+	
+	<select id="findAllNormal" resultType="com.muzi.system.entity.Role">
+		select * from t_role where status = 1
+	</select>
+	
+</mapper>

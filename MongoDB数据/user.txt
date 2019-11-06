@@ -1,0 +1,3 @@
+db.muzi_user.insert([
+	{username:"admin",password:"admin",nick:"埃罗芒阿老师",inage:"static/img/timg.jpg",age:12,sex:2,autograph:"四月是你的谎言",tel:"13981665614",address:"四川巴中",visit:1,coinnum:12,status:1}
+])

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<button onclick="pay()">安妮</button>
+	</body>
+	
+	
+	<script src="../../static/wxpay/jquery.min.js"></script>
+	<script src="../../static/wxpay/mui.min.js"></script>
+	<script src="../../static/wxpay/jquery-weui.min.js"></script>
+	
+	<script type="text/javascript">
+			function pay(){
+				$.ajax({
+		            type: 'POST',
+		            url: '/app/weixin/api/pay',
+		            data: {
+		                "orderId": "75",
+		            },
+		            dataType: 'json',
+		            success: function (data) {
+		            	console.log(data);
+		                WeixinJSBridge.invoke('getBrandWCPayRequest', {
+		                    "appId": data.appId,
+		                    "nonceStr": data.nonceStr,
+		                    "package": data.packageObj,
+		                    "paySign": data.paySign,
+		                    "signType": data.signType,
+		                    "timeStamp": data.timeStamp
+		                }, function (res) {
+		                	console.log(res);
+		                    WeixinJSBridge.log(res.err_msg);
+		                    if (res.err_msg == "get_brand_wcpay_request:ok") {
+		                        alert("支付成功!");
+		                    } else if (res.err_msg == "get_brand_wcpay_request:cancel") {
+		                        alert("取消支付!");
+		                        return;
+		                    } else {
+		                        alert("支付失败!");
+		                        return;
+		                    }
+		                })
+		            }
+		        });
+			}
+	</script>
+</html>

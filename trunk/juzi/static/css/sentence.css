@@ -1,0 +1,67 @@
+.muzi-parent{
+  width: 98%;
+  margin: 5px auto;
+  background-color: white;
+  border-radius: 10px;
+}
+.muzi-parent .muzi-user{
+  width: 100%;
+  height: 60px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.muzi-parent .muzi-user img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  float: left;
+}
+.muzi-parent .muzi-user .muzi-img{
+  width: 20%;
+  height: 100%;
+  float: left;
+  padding-left: 10px;
+}
+.muzi-parent .muzi-user .muzi-user-info{
+  width: 80%;
+  height: 100%;
+  float: left;
+}
+.muzi-parent .muzi-user .muzi-user-info div{
+  width: 100%;
+  height: 50%;
+}
+
+/*关注*/
+.muzi-guanzhu{
+  float: right;
+  padding: 0px 10px;
+  margin-right: 10px;
+  border: 1px solid #60C86F;
+  border-radius: 10px;
+  color: #60C86F;
+}
+.muzi-parent .muzi-juzi{
+  padding: 10px 10px;
+}
+.muzi-parent .muzi-juzi .muzi-juzi-info{
+  font-size: 16px;
+  color: #C0C0C0;
+}
+.muzi-parent .muzi-juzi .muzi-juzi-author{
+  text-align:right;
+  margin-top: 5px;
+}
+.muzi-parent .muzi-status{
+  width: 100%;
+  height: 40px;
+}
+.muzi-parent .muzi-status span{
+  font-size: 15px;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  float: left;
+  line-height: 40px;
+  color: #C0C0C0;
+}
