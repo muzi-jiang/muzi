@@ -1,17 +1,19 @@
 package com.muzi.test.rabbitmq.util;
+/*
 
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
+*/
 
 /**
  * @author libin
  * @date 2019/10/31 23:15
  */
 
-public class ConnectionUtils {
+/*public class ConnectionUtils {
 
     public static Connection getConection() throws IOException, TimeoutException {
         ConnectionFactory factory = new ConnectionFactory();
@@ -22,5 +24,5 @@ public class ConnectionUtils {
         factory.setPassword("muzi");
         return factory.newConnection();
     }
-}
+}*/
 

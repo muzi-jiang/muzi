@@ -1,4 +1,5 @@
 package com.muzi.test.rabbitmq.pb;
+/*
 
 import com.muzi.test.rabbitmq.util.ConnectionUtils;
 import com.rabbitmq.client.Channel;
@@ -6,11 +7,13 @@ import com.rabbitmq.client.Connection;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
+*/
 
 /**
  * @author libin
  * @date 2019/11/3 12:01
  */
+/*
 public class Send {
 
     public static final String EXCHANGE_NAME = "test_exchange_muzi";
@@ -39,3 +42,4 @@ public class Send {
 
 
 }
+*/
