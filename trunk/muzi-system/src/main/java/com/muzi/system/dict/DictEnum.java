@@ -9,9 +9,9 @@ public class DictEnum {
 	/**
 	 * 初始版本
 	 */
-	final static String InitVerNo = "1";
-	
-	
+	public static final String InitVerNo = "1";
+
+	public static final String FILEPATH = "C:\\Users\\Administrator\\Desktop\\muzi02\\image\\";
 	/**
 	 * 常数定义管理
 	 * @author Administrator

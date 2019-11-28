@@ -15,11 +15,17 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = MasterDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "masterSqlSessionFactory")
+@MapperScan(basePackages = {MasterDataSourceConfig.PACKAGE_02,MasterDataSourceConfig.PACKAGE_03}, sqlSessionFactoryRef = "masterSqlSessionFactory")
 public class MasterDataSourceConfig {
 
     // 精确到 master 目录，以便跟其他数据源隔离
-    static final String PACKAGE = "com.muzi.**.mapper";
+    /*static final String PACKAGE_01 = "com.muzi.app";*/
+    static final String PACKAGE_02 = "com.muzi.manager";
+    static final String PACKAGE_03 = "com.muzi.system";
+
+
+
+
     static final String MAPPER_LOCATION = "classpath:mybatis/mapper/**/*.xml";
 
     @Value("${master.datasource.url}")

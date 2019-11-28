@@ -20,7 +20,7 @@ import javax.sql.DataSource;
 public class SlaveDataSourceConfig {
 
     // 精确到 slave 目录，以便跟其他数据源隔离
-    static final String PACKAGE = "com.muzi.test.webmagic.mapper";
+    static final String PACKAGE = "com.muzi.webmagic.mapper";
     static final String MAPPER_LOCATION = "classpath:mybatis/mapper/webmagic/*.xml";
 
     @Value("${slave.datasource.url}")
