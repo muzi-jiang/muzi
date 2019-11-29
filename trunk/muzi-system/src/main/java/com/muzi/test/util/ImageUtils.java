@@ -38,7 +38,7 @@ public class ImageUtils {
             //文件全路径
             String picName = UUID.randomUUID().toString() + extName;
 
-             outputStream = new FileOutputStream(new File(DictEnum.FILEPATH+picName));
+             outputStream = new FileOutputStream(new File(DictEnum.FILEPATH_TITLE+picName));
 
             HttpEntity entity = response.getEntity();
             entity.writeTo(outputStream);

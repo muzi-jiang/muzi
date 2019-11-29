@@ -2,6 +2,7 @@ package com.muzi.webmagic.process;
 
 import com.muzi.webmagic.entity.Title;
 import com.muzi.webmagic.pipelines.MyPipelines;
+import com.muzi.webmagic.util.WebmagicUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -29,18 +30,21 @@ public class JobProcess implements PageProcessor {
     public void process(Page page) {
         List<Title> titles = new ArrayList<>();
         Html html = page.getHtml();
-        List<Selectable> nodes = html.css("div#primary_menu > ul.nav-menu > li").nodes();
+        List<Selectable> nodes = html.css("div#tpl-img-content li a").nodes();
         for (Selectable selectable:nodes){
-            String url = selectable.css("a").links().toString();
-            String title = selectable.css("a div.nav-name", "text").toString();
-            if (title == null){
-                continue;
-            }
-            Title title1 = new Title();
 
-            title1.setName(title);
-            title1.setUrl(url);
-            titles.add(title1);
+            System.out.println(selectable);
+            String name = WebmagicUtils.getValueByKeyInHtml(selectable.toString(), "title");
+
+            String href = WebmagicUtils.getValueByKeyInHtml(selectable.toString(), "href");
+
+            Selectable img = selectable.css("img");
+            String image = WebmagicUtils.getValueByKeyInHtml(img.toString(), "data-original");
+            //将图片下载到本地
+            String newImage = WebmagicUtils.downloadImage(image);
+
+            Title title = new Title(name,href,newImage);
+            titles.add(title);
         }
         page.putField("titles",titles);
     }
@@ -53,7 +57,7 @@ public class JobProcess implements PageProcessor {
     @Scheduled(initialDelay =5*1000,fixedDelay = 100*1000)
     public void job(){
         Spider.create(new JobProcess())
-                .addUrl("https://www.bilibili.com")
+                .addUrl("https://www.69aup.com/meinv/index.html")
                 .setScheduler(new QueueScheduler().setDuplicateRemover(new BloomFilterDuplicateRemover(10000)))
                 .thread(10)
                 .addPipeline(this.myPipelines)

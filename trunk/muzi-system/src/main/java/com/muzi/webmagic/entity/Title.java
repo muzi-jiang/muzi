@@ -6,8 +6,8 @@ public class Title extends DefaultIntegerEntity {
 
 
      private String name;
-     private String url;
-     private String sequence;
+     private String href;
+     private String imageUrl;
 
     public String getName() {
         return name;
@@ -17,19 +17,28 @@ public class Title extends DefaultIntegerEntity {
         this.name = name;
     }
 
-    public String getUrl() {
-        return url;
+    public String getHref() {
+        return href;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setHref(String href) {
+        this.href = href;
     }
 
-    public String getSequence() {
-        return sequence;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setSequence(String sequence) {
-        this.sequence = sequence;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public Title(String name, String href, String imageUrl) {
+        this.name = name;
+        this.href = href;
+        this.imageUrl = imageUrl;
+    }
+
+    public Title() {
     }
 }

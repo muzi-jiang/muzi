@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface TitleMapper {
 
-    @Insert({"insert into t_title(name,url,sequence) values (#{name},#{url},#{sequence})"})
+    @Insert({"insert into t_title(name,href,image_url) values (#{name},#{href},#{imageUrl})"})
     void saveTitle(Title title);
 
 }

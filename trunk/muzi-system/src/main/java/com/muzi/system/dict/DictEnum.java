@@ -11,7 +11,7 @@ public class DictEnum {
 	 */
 	public static final String InitVerNo = "1";
 
-	public static final String FILEPATH = "C:\\Users\\Administrator\\Desktop\\muzi02\\image\\";
+	public static final String FILEPATH_TITLE = "D:/webmgic/title/";
 	/**
 	 * 常数定义管理
 	 * @author Administrator
