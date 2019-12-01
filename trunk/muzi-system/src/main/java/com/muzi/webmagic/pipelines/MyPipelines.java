@@ -18,9 +18,14 @@ public class MyPipelines implements Pipeline {
 
     @Override
     public void process(ResultItems resultItems, Task task) {
+        //保存title
         List<Title> titles = resultItems.get("titles");
-        titles.forEach(title -> {
-            titleService.saveTitle(title);
-        });
+        if(titles != null && titles.size() > 0){
+            titles.forEach(title -> {
+                titleService.saveTitle(title);
+            });
+        }
+
+        //保存class
     }
 }
