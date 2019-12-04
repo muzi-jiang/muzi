@@ -1,6 +1,7 @@
 package com.muzi.webmagic.process;
 
 import com.muzi.webmagic.entity.Title;
+import com.muzi.webmagic.entity.TitleClass;
 import com.muzi.webmagic.pipelines.MyPipelines;
 import com.muzi.webmagic.util.WebmagicUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ import java.util.regex.Pattern;
 @Component
 public class JobProcess implements PageProcessor {
 
-    private static final String URL = "https://www.69acm.com";
+    private static final String URL = "https://www.acn86.com";
 
     @Autowired
     private MyPipelines myPipelines;
@@ -34,7 +35,7 @@ public class JobProcess implements PageProcessor {
         return site;
     }
 
-    @Scheduled(initialDelay =5*1000,fixedDelay = 100*1000)
+   /* @Scheduled(initialDelay =5*1000,fixedDelay = 100*1000)
     public void job(){
         Spider.create(new JobProcess())
                 .addUrl(URL+"/meinv/index.html")
@@ -43,12 +44,15 @@ public class JobProcess implements PageProcessor {
                 .addPipeline(this.myPipelines)
                 .run();
 
-    }
+    }*/
     String pattern = "^.*(\\期)$";
 
     @Override
     public void process(Page page) {
+
         List<Title> titles = new ArrayList<>();
+        List<TitleClass> titleClasses = new ArrayList<>();
+
         Html html = page.getHtml();
         List<Selectable> nodes = html.css("div#tpl-img-content li a").nodes();
 
@@ -58,13 +62,14 @@ public class JobProcess implements PageProcessor {
             for (Selectable selectable:nodes){
 
                 String name = WebmagicUtils.getValueByKeyInHtml(selectable.toString(), "title");
-                System.out.println(name + "----" +Pattern.matches(pattern,name));
                 if(Pattern.matches(pattern,name)){
                     //表示是class
+                    //获取当前主题
+                    String topic = html.css("span.cat_pos_l a").nodes().get(2).css("a", "text").toString();
                     String href = WebmagicUtils.getValueByKeyInHtml(selectable.toString(), "href");
                     page.addTargetRequest(URL+href);
-                    Title title = saveTitle(selectable);
-                    titles.add(title);
+                    TitleClass titleClass = saveClass(selectable,topic);
+                    titleClasses.add(titleClass);
                 }else{
                     //表示是title
                     String href = WebmagicUtils.getValueByKeyInHtml(selectable.toString(), "href");
@@ -75,6 +80,7 @@ public class JobProcess implements PageProcessor {
                 //保存
             }
             page.putField("titles",titles);
+            page.putField("titleClasses",titleClasses);
         }else{
             //表示這是詳情頁面
             //saveClass(page);
@@ -104,11 +110,21 @@ public class JobProcess implements PageProcessor {
 
     /**
      * 保存class分類信息
-     * @param page
+     * @param selectable
      */
-    public void saveClass(Page page){
-        Html html = page.getHtml();
-        System.out.println(html);
+    public TitleClass saveClass(Selectable selectable,String topic){
+        System.out.println(selectable);
+        String name = WebmagicUtils.getValueByKeyInHtml(selectable.toString(), "title");
+        String href = WebmagicUtils.getValueByKeyInHtml(selectable.toString(), "href");
+        Selectable img = selectable.css("img");
+        String image = WebmagicUtils.getValueByKeyInHtml(img.toString(), "data-original");
+        //将图片下载到本地
+        String newImage = WebmagicUtils.downloadImageNewName(image,name,topic);
+
+        //time
+        String time = selectable.css("span", "text").toString();
+        TitleClass titleClass = new TitleClass(name,time,href,newImage);
+        return titleClass;
     }
 
 }

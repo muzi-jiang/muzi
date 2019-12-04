@@ -15,7 +15,7 @@ public class DownloadVideoUtils {
     //设置初始缓存大小
     private static final int MAX_BUFFER_SIZE = 1000000;
 
-    private static final String downloadFilePath = "C:\\Users\\Administrator\\Desktop\\muzi02\\aaaa";
+    private static final String downloadFilePath = "D:\\test";
     /**
      *
      * 下载视频 未加密的视频连接
@@ -87,8 +87,8 @@ public class DownloadVideoUtils {
         }
     }
 
-   /* public static void main(String[] args) {
+    public static void main(String[] args) {
         DownloadVideoNotaddPass("http://aqiniu.tangdou.com/C79EBFF6107CE4389C33DC5901307461-20.mp4");
     }
-*/
+
 }

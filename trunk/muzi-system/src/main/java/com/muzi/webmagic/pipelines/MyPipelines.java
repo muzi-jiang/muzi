@@ -1,6 +1,7 @@
 package com.muzi.webmagic.pipelines;
 
 import com.muzi.webmagic.entity.Title;
+import com.muzi.webmagic.entity.TitleClass;
 import com.muzi.webmagic.service.TitleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -27,5 +28,11 @@ public class MyPipelines implements Pipeline {
         }
 
         //保存class
+        List<TitleClass> titleClasses = resultItems.get("titleClasses");
+        if(titleClasses != null && titleClasses.size() > 0){
+            titleClasses.forEach(titleClasse -> {
+                titleService.saveTitleClass(titleClasse);
+            });
+        }
     }
 }
