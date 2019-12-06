@@ -3,6 +3,9 @@ package com.muzi.test.strategy;
 import java.math.BigDecimal;
 
 /**
+ *
+ * 策略模式
+ *
  * 1000内  原价
  * 1000 -2000(包含1000) 0.9
  * 2000 以上   0.5
