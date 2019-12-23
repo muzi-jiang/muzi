@@ -29,7 +29,6 @@ public class TitleController {
     @ResponseBody
     public  Title test() {
         Title title = titleService.getById(414);
-        List<Title> titles = titleService.selectAll();
-        return titles.get(0);
+        return title;
     }
 }
