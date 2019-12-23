@@ -1,4 +1,4 @@
-spring:
-  data:
-    mongodb:
-      uri: mongodb://47.99.220.61:27017/muzi
+#spring:
+#  data:
+#    mongodb:
+#      uri: mongodb://47.99.220.61:27017/muzi
