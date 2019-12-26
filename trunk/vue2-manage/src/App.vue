@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="fillcontain">
     <router-view/>
   </div>
 </template>
@@ -9,5 +9,8 @@ export default {
   name: 'App'
 }
 </script>
+<style lang="less">
+	@import './static/common';
+</style>
 
 

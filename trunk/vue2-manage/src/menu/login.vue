@@ -16,17 +16,16 @@
 				    	<el-button type="primary" @click="submitForm('loginForm')" class="submit_btn">登陆</el-button>
 				  	</el-form-item>
 				</el-form>
-				<p class="tip">温馨提示：</p>
-				<p class="tip">未登录过的新用户，自动注册</p>
-				<p class="tip">注册过的用户可凭账号密码登录</p>
+				<p class="tip">每日一言：逃之夭夭，灼灼其华。</p>
+				
 	  		</section>
 	  	</transition>
   	</div>
 </template>
 
 <script>
-	
-
+	import {login, getAdminInfo} from '@/api/getData'
+	import {mapActions, mapState} from 'vuex'
 	export default {
 	    data(){
 			return {
@@ -42,21 +41,49 @@
 						{ required: true, message: '请输入密码', trigger: 'blur' }
 					],
 				},
-				showLogin: false,
+				showLogin: true,
 			}
 		},
-		
+		created(){
+            this.initData();
+        },
 		methods: {
 			async submitForm(formName) {
-				
+				this.$refs[formName].validate(async (valid) => {
+					if (valid) {
+						const res = await login({userName: this.loginForm.username, passWord: this.loginForm.password})
+						
+						if (res == 1) {
+							this.$message({
+		                        type: 'success',
+		                        message: '登录成功'
+		                    });
+							//this.$router.push('manage')
+						}else{
+							this.$message({
+		                        type: 'error',
+		                        message: res.message
+		                    });
+						}
+					} else {
+						this.$notify.error({
+							title: '错误',
+							message: '请输入正确的用户名密码',
+							offset: 100
+						});
+						return false;
+					}
+				});
+			},
+			initData(){
+				console.log("初始化加载每日一言");		
 			},
 		},
-		
 	}
 </script>
 
 <style lang="less" scoped>
-	@import '../style/mixin';
+	@import '../static/mixin';
 	.login_page{
 		background-color: #324057;
 	}

@@ -1,5 +1,7 @@
 package com.muzi.communal.baseentity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.io.Serializable;
@@ -7,66 +9,74 @@ import java.util.Date;
 
 public class DefaultIntegerEntity implements Serializable {
 
-    @JsonFormat(
-            timezone = "GMT+8",
-            pattern = "yyyy-MM-dd HH:mm:ss"
-    )
-    private Date createdTime;
-    @JsonFormat(
-            timezone = "GMT+8",
-            pattern = "yyyy-MM-dd HH:mm:ss"
-    )
-    private Date updatedTime;
-    private Integer createdUserId;
-    private Integer updatedUserId;
-    private String createdUserName;
-    private String updatedUserName;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
-    public Date getCreatedTime() {
-        return createdTime;
+    private Integer createUserId;
+
+    private String createUserName;
+
+    private Date createTime;
+
+    private Integer updateUserId;
+
+    private String updateUserName;
+
+    private Date updateUserTime;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setCreatedTime(Date createdTime) {
-        this.createdTime = createdTime;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Date getUpdatedTime() {
-        return updatedTime;
+    public Integer getCreateUserId() {
+        return createUserId;
     }
 
-    public void setUpdatedTime(Date updatedTime) {
-        this.updatedTime = updatedTime;
+    public void setCreateUserId(Integer createUserId) {
+        this.createUserId = createUserId;
     }
 
-    public Integer getCreatedUserId() {
-        return createdUserId;
+    public String getCreateUserName() {
+        return createUserName;
     }
 
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
+    public void setCreateUserName(String createUserName) {
+        this.createUserName = createUserName;
     }
 
-    public Integer getUpdatedUserId() {
-        return updatedUserId;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setUpdatedUserId(Integer updatedUserId) {
-        this.updatedUserId = updatedUserId;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getCreatedUserName() {
-        return createdUserName;
+    public Integer getUpdateUserId() {
+        return updateUserId;
     }
 
-    public void setCreatedUserName(String createdUserName) {
-        this.createdUserName = createdUserName;
+    public void setUpdateUserId(Integer updateUserId) {
+        this.updateUserId = updateUserId;
     }
 
-    public String getUpdatedUserName() {
-        return updatedUserName;
+    public String getUpdateUserName() {
+        return updateUserName;
     }
 
-    public void setUpdatedUserName(String updatedUserName) {
-        this.updatedUserName = updatedUserName;
+    public void setUpdateUserName(String updateUserName) {
+        this.updateUserName = updateUserName;
+    }
+
+    public Date getUpdateUserTime() {
+        return updateUserTime;
+    }
+
+    public void setUpdateUserTime(Date updateUserTime) {
+        this.updateUserTime = updateUserTime;
     }
 }
