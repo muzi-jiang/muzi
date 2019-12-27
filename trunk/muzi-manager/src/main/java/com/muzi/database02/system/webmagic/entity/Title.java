@@ -3,6 +3,7 @@ package com.muzi.database02.system.webmagic.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.muzi.communal.baseentity.DefaultIntegerEntity;
 
 import java.io.Serializable;
@@ -16,7 +17,7 @@ import java.io.Serializable;
  * @since 2019-12-20
  */
 @TableName("t_title")
-public class Title{
+public class Title extends Page {
 
     private static final long serialVersionUID = 1L;
 
