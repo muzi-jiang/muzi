@@ -51,14 +51,14 @@
 			async submitForm(formName) {
 				this.$refs[formName].validate(async (valid) => {
 					if (valid) {
-						const res = await login({userName: this.loginForm.username, passWord: this.loginForm.password})
-						
-						if (res == 1) {
+                        const res = await login({username: this.loginForm.username, password: this.loginForm.password})
+                        console.log(res);
+						if (res.resultCode == 1) {
 							this.$message({
 		                        type: 'success',
-		                        message: '登录成功'
+		                        message: res.message
 		                    });
-							//this.$router.push('manage')
+							this.$router.push('menu')
 						}else{
 							this.$message({
 		                        type: 'error',
