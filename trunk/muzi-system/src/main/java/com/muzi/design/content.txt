@@ -1,0 +1,5 @@
+*****java 23中设计模式
+
+
+** strategy 策略模式
+** prototype 原型模式

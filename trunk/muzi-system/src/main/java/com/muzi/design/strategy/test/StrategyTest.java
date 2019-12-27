@@ -1,4 +1,8 @@
-package com.muzi.test.strategy.test;
+package com.muzi.design.strategy.test;
+
+/**
+ * 策略模式
+ */
 
 public class StrategyTest {
 

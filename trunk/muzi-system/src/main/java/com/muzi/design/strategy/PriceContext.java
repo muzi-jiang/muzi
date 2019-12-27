@@ -1,4 +1,4 @@
-package com.muzi.test.strategy;
+package com.muzi.design.strategy;
 
 import java.math.BigDecimal;
 

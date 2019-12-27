@@ -1,4 +1,4 @@
-package com.muzi.test.strategy.test;
+package com.muzi.design.strategy.test;
 
 public class StrategyContext {
 
