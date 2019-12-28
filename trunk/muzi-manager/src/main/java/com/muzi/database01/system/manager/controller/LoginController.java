@@ -59,6 +59,6 @@ public class LoginController {
         if(!"1".equals(selectUser.getStatus())){
             return new ReturnMessage(ReturnMessage.ResultCode.ERROR,"账号被锁定");
         }
-        return new ReturnMessage(ReturnMessage.ResultCode.OK,"登录成功");
+        return new ReturnMessage(ReturnMessage.ResultCode.OK,"登录成功",selectUser);
     }
 }

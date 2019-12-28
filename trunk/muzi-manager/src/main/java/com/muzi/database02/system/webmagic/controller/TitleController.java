@@ -33,10 +33,17 @@ public class TitleController {
     @RequestMapping("/titleList")
     @ResponseBody
     public  IPage test(Title title) {
-        Map map = new HashMap();
+//        Map map = new HashMap();
+//        IPage<Title> page = new Page<>(1, 10);
+//        IPage page1 = titleService.page(page, new QueryWrapper<>().allEq(map));
+//        List records = page1.getRecords();
+//        return page1;
+
         IPage<Title> page = new Page<>(1, 10);
-        IPage page1 = titleService.page(page, new QueryWrapper<>().allEq(map));
-        List records = page1.getRecords();
+        QueryWrapper<Title> wrapper = new QueryWrapper<>();
+        Title student = new Title();
+        wrapper.setEntity(student);
+        IPage<Title> page1 = titleService.page(page, wrapper);
         return page1;
     }
 }
