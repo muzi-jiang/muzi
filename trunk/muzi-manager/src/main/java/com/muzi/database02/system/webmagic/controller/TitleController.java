@@ -34,7 +34,8 @@ public class TitleController {
     @ResponseBody
     public  IPage test(Title title) {
         Map map = new HashMap();
-        IPage page1 = titleService.page(title, new QueryWrapper<>().allEq(map));
+        IPage<Title> page = new Page<>(1, 10);
+        IPage page1 = titleService.page(page, new QueryWrapper<>().allEq(map));
         List records = page1.getRecords();
         return page1;
     }
