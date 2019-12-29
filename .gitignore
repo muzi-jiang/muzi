@@ -1,5 +1,9 @@
 # Compiled class file
 *.class
+/trunk/muzi-system
+/trunk/mybatis-plus
+/trunk/vue2-manage/node_modules
+
 
 # Log file
 *.log
