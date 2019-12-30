@@ -1,0 +1,2 @@
+#解决冲突文件
+git reset --hard FETCH_HEAD
