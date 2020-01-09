@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.muzi.database01.flowable.mapper.WFMapper">
+
+
+    <update id="updateHiTaskintAssignee" parameterType="String">
+        update act_hi_taskinst set assignee_ = #{arg0}
+        where id_ = #{arg1} and proc_inst_id_ = #{arg2}
+    </update>
+
+    <select id="updateRemark" parameterType="String">
+        update 	wf_hi_task
+            set remark_ = #{arg2}
+        WHERE
+            proc_inst_id =#{arg0}
+            and task_id = #{arg1}
+    </select>
+
+    <select id="getTaskIdByProc" parameterType="String" resultType="String">
+        select id_ from act_ru_task where PROC_INST_ID_ = #{0}
+    </select>
+
+    <select id="getProcUser" parameterType="String" resultType="String">
+        select user_id_
+        FROM
+            act_ru_identitylink
+        WHERE
+
+        task_id_ = ( SELECT id_ FROM act_ru_task WHERE proc_inst_id_ = #{0} )
+        AND TYPE_ = 'candidate'
+    </select>
+</mapper>

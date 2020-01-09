@@ -5,7 +5,6 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.baomidou.mybatisplus.core.MybatisConfiguration;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,7 +21,7 @@ import javax.sql.DataSource;
 public class MasterDataSourceConfig {
 
     // 精确到 master 目录，以便跟其他数据源隔离
-    static final String PACKAGE_01 = "com.muzi.database01.system.**.mapper";
+    static final String PACKAGE_01 = "com.muzi.database01.**.mapper";
     static final String MAPPER_LOCATION = "classpath:mybatis/database01/*.xml";
 
 
