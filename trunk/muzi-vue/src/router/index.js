@@ -6,6 +6,7 @@ Vue.use(Router)
 const login = r => require.ensure([], () => r(require('@/menu/login')), 'login');
 const menu = r => require.ensure([], () => r(require('@/menu/menu')), 'menu');
 const user = r => require.ensure([], () => r(require('@/page/system/user')), 'user');
+const juzi = r => require.ensure([], () => r(require('@/page/manager/juzi')), 'juzi');
 const router = new Router({
   routes: [
     {
@@ -26,6 +27,10 @@ const router = new Router({
       children: [{
         path: '/user',
         component: user,
+        meta:{requireAuth:true}
+      },{
+        path: '/juzi',
+        component: juzi,
         meta:{requireAuth:true}
       },]
     }

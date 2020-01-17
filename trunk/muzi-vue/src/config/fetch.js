@@ -3,7 +3,7 @@ import { baseUrl } from './env'
 export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 	type = type.toUpperCase();
 	url = baseUrl + url;
-	console.log(url);
+	
 	if (type == 'GET') {
 		let dataStr = ''; //数据拼接字符串
 		Object.keys(data).forEach(key => {
@@ -15,7 +15,7 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 			url = url + '?' + dataStr;
 		}
 	}
-
+	console.log(url);
 	if (window.fetch && method == 'fetch') {
 		let requestConfig = {
 			credentials: 'include',

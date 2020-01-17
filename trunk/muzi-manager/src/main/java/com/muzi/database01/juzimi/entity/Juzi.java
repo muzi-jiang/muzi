@@ -3,6 +3,8 @@ package com.muzi.database01.juzimi.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.muzi.communal.baseentity.DefaultIPage;
+import com.muzi.communal.util.Page;
 
 import java.io.Serializable;
 
@@ -15,7 +17,7 @@ import java.io.Serializable;
  * @since 2020-01-10
  */
 @TableName("t_juzi")
-public class Juzi implements Serializable {
+public class Juzi extends Page {
 
     private static final long serialVersionUID = 1L;
 

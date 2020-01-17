@@ -7,11 +7,12 @@
 					<el-submenu index="1">
 						<template slot="title"><i class="el-icon-tools"></i>系统管理</template>
 						<el-menu-item index="user">用户管理</el-menu-item>
-						<el-menu-item index="v">角色管理</el-menu-item>
+						<el-menu-item index="">角色管理</el-menu-item>
 						<el-menu-item index="b">菜单管理</el-menu-item>
 					</el-submenu>
 					<el-submenu index="2">
 						<template slot="title"><i class="el-icon-document"></i>数据管理</template>
+						<el-menu-item index="juzi">句子列表</el-menu-item>
 						<el-menu-item index="userList">用户列表</el-menu-item>
 						<el-menu-item index="shopList">商家列表</el-menu-item>
 						<el-menu-item index="foodList">食品列表</el-menu-item>
