@@ -17,7 +17,7 @@ import java.io.Serializable;
  * @since 2020-01-10
  */
 @TableName("t_juzi")
-public class Juzi extends Page {
+public class Juzi /*extends Page*/ {
 
     private static final long serialVersionUID = 1L;
 
