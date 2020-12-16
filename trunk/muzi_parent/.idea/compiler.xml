@@ -8,8 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="muzi_flowable" />
         <module name="muzi_system" />
-        <module name="muzi_parent" />
         <module name="muzi_design" />
+        <module name="muzi_parent" />
       </profile>
     </annotationProcessing>
   </component>

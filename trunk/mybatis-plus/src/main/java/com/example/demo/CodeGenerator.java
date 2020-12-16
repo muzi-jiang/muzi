@@ -31,15 +31,15 @@ public class CodeGenerator {
 
         //数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://121.40.147.19:3306/muzi?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull");
+        dsc.setUrl("jdbc:mysql://192.168.0.176:3306/bhst-slove-user?serverTimezone=Asia/Shanghai&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=CONVERT_TO_NULL");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("152127123066");
+        dsc.setPassword("root123456");
         mpg.setDataSource(dsc);
 
         //包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.example.demo")
+        pc.setParent("com.bhst.user")
                 .setMapper("dao");
         mpg.setPackageInfo(pc);
 
